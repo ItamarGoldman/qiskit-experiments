@@ -6,9 +6,8 @@ Installation
 ============
 
 Qiskit Experiments is built on top of Qiskit, so we recommend that you first install
-Qiskit following its :external+qiskit:doc:`installation guide <getting_started>`. Qiskit
-Experiments supports the same platforms as Qiskit itself and Python versions 3.8,
-3.9, 3.10, and 3.11.
+Qiskit following its `installation guide <https://docs.quantum.ibm.com/start/install>`__. Qiskit
+Experiments supports the same platforms as Qiskit itself and Python versions 3.8 through 3.12.
 
 Qiskit Experiments releases can be installed via the Python package manager ``pip``
 in your shell environment:
@@ -55,16 +54,17 @@ the experiment from the Qiskit Experiments library:
     from qiskit_experiments.library import T1
 
 Experiments must be run on a backend. We're going to use a simulator,
-:class:`~qiskit.providers.fake_provider.FakePerth`, for this example, but you can use any
+:class:`~qiskit_ibm_runtime.fake_provider.FakePerth`, for this example, but you can use any
 backend, real or simulated, that you can access through Qiskit.
 
 .. note::
-    This tutorial requires the :mod:`qiskit_aer` package to run simulations.
-    You can install it with ``python -m pip install qiskit-aer``.
+    This tutorial requires the :mod:`qiskit_aer` and :mod:`qiskit_ibm_runtime`
+    packages to run simulations.  You can install them with ``python -m pip
+    install qiskit-aer qiskit-ibm-runtime``.
 
 .. jupyter-execute::
 
-    from qiskit.providers.fake_provider import FakePerth
+    from qiskit_ibm_runtime.fake_provider import FakePerth
     from qiskit_aer import AerSimulator
 
     backend = AerSimulator.from_backend(FakePerth())
